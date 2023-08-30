@@ -11,11 +11,14 @@ This work belongs to the thematic series of Spatio-temporal omics algorithms.
 ## Schematic Diagram
 ![img.png](img/fig1.jpg)
 
-Figure: A. Illustrating the spatio-temporal omics data processing flow. B. Illustrating the 
-EAGS method flow.
+Figure: A. The spatio-temporal omics data processing flow. B. The EAGS method flow.
 
 
 ## Quick Start
+
+### Download the GitHub Repository
+[Download](https://github.com/STOmics/EAGS/archive/refs/heads/main.zip) this GitHub repository, and extract the contents into a folder.
+
 
 ### Install Dependencies
 ```bash
@@ -25,14 +28,13 @@ conda activate EAGS
 pip install -r requirements.txt
 ```
 
-### Download the GitHub Repository
-[Download](https://github.com/STOmics/EAGS/archive/refs/heads/main.zip) this GitHub repository, and extract the contents into a folder.
-
 ### Running EAGS Script from the Command-line
 
 ```bash
+cd EAGS-main/.
+
 # EAGS
-python EAGS_using.py
+python EAGS.py
 --input input.h5ad
 --smooth_threshold 90
 --a 1
@@ -46,15 +48,17 @@ python EAGS_using.py
 If you do not change the parameters, you can directly use the following command line:
 ```bash
 # EAGS
-python EAGS_using.py
+cd EAGS-main/.
+
+python EAGS.py
 --input input.h5ad
 --output gaussian.h5ad
 ```
 
-### Parameter Description/Explanation
+### Parameter Explanation
 
-The core function of the EAGS method is the `gaussian_smooth_adaptively` function provided in `EAGS_using.py`, and the 
-detailed formula of this function has been given in the `GS_for_user.py`.
+The core function of the EAGS method is the `gaussian_smooth_adaptively` function provided in `EAGS.py`, and the 
+detailed formula of this function has been given in the `EAGS_function.py`.
 
 The following code is a quick example of running our Smoothing strategy. The function `gaussian_smooth_adaptively()` takes 
 in `anndata(H5AD format)` 
@@ -70,12 +74,12 @@ For more details on the input anndata(H5AD format), please check on [link](https
                                                     normalize_zscore=True)
 
 The parameters of  `gaussian_smooth_adaptively` are:
-- `adata`: adata file need to be imputed.
-- `smooth_threshold`: Control the gradient of Gaussian curve (Gaussian parameter c).
-- `a`: Gaussian parameter a. 
-- `b`: Gaussian parameter b.
+- `adata`: Adata file (H5AD format) need to be smoothed.
+- `smooth_threshold`: Control the gradient of Gaussian curve.
+- `a`: The a-value of the Gaussian kernel kernel function, which used to control the height of the Gaussian curve.
+- `b`: The b-value of the Gaussian kernel kernel function, which used to control the centre of the Gaussian curve.
 - `n_comps`: Number of principal components to use for calculating neighborhoods. 
-- `n_neighbors`: number of nearest neighbors from which to compute kernel bandwidth.
+- `n_neighbors`: Number of nearest neighbors from which to compute kernel bandwidth.
 - `normalize_zscore`: Default preprocessing method for raw counts matrice. If "False", it means input anndata.X data 
 have been normalized.
 
