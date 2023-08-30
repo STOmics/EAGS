@@ -45,7 +45,7 @@ python EAGS.py
 --output gaussian.h5ad
 ```
 
-If you do not change the parameters, you can directly use the following command line:
+EAGS can also be performed directly without some parameter setting as:
 ```bash
 # EAGS
 cd EAGS-main/.
