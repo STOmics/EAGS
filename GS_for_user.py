@@ -13,16 +13,8 @@ or Email :  lvtongxuan@genomics.cn
 
 """
 import anndata
-import scanpy as sc
 import numpy as np
-import pandas as pd
-from pandas import DataFrame
-import matplotlib.pyplot as plt
-import plotly.express as px
-import plotly.io as pio
 import scanpy as sc
-import plotly.graph_objects as go
-import os
 import scipy.sparse as sp
 from scipy.spatial import distance
 from sklearn.neighbors import NearestNeighbors

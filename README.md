@@ -1,5 +1,5 @@
 # EAGS: efficient and adaptive Gaussian smoothing applied to high-resolved spatial transcriptomics
-## introduction
+## Introduction
 EAGS is a smoothing approach for spatial transcriptome data with ultrahigh resolution. 
 Through the principal component information of the profiling of gene expression and the 
 personally identifiable information between cells, it uses a two-factor adaptive smoothing 
@@ -8,10 +8,51 @@ self-developed smoothing weight formula to calculate the smoothing contribution 
 recalculate the gene expression of each cell.
 
 This work belongs to the thematic series of Spatio-temporal omics algorithms.
-## Schematic diagram
+## Schematic Diagram
 ![img.png](img/fig1.jpg)
 
+Figure: A. Illustrating the spatio-temporal omics data processing flow. B. Illustrating the 
+EAGS method flow.
+
+
 ## Quick Start
+
+### Install Dependencies
+```bash
+### Python enviroment constructed by Conda
+conda create -n EAGS python=3.8.13
+conda activate EAGS
+pip install -r requirements.txt
+```
+
+### Download the GitHub Repository
+[Download](https://github.com/STOmics/EAGS/archive/refs/heads/main.zip) this GitHub repository, and extract the contents into a folder.
+
+### Running EAGS Script from the Command-line
+
+```bash
+# EAGS
+python EAGS_using.py
+--input input.h5ad
+--smooth_threshold 90
+--a 1
+--b 0
+--n_comps 50
+--n_neighbors 10
+--normalize_zscore True
+--output gaussian.h5ad
+```
+
+If you do not change the parameters, you can directly use the following command line:
+```bash
+# EAGS
+python EAGS_using.py
+--input input.h5ad
+--output gaussian.h5ad
+```
+
+### Parameter Description/Explanation
+
 The core function of the EAGS method is the `gaussian_smooth_adaptively` function provided in `EAGS_using.py`, and the 
 detailed formula of this function has been given in the `GS_for_user.py`.
 
@@ -35,25 +76,13 @@ The parameters of  `gaussian_smooth_adaptively` are:
 - `b`: Gaussian parameter b.
 - `n_comps`: Number of principal components to use for calculating neighborhoods. 
 - `n_neighbors`: number of nearest neighbors from which to compute kernel bandwidth.
-- `normalize_zscore`: Default preprocessing method for raw counts matrice. If "False", it means input anndata.X data have been normalized..
+- `normalize_zscore`: Default preprocessing method for raw counts matrice. If "False", it means input anndata.X data 
+have been normalized.
 
 The output of `gaussian_smooth_adaptively()` is a `anndata(H5AD format)` includes:
 - `adata.X`: MID counts have been smoothed.
-- `adata.obsm[spatial`: Spot's spatial coordinates.
+- `adata.obsm[spatial]`: Spot's spatial coordinates.
 
-####  Warning
-After smooth your gene expression matrix（adata.X）may not be filled with integer,but filled with Multiple decimal.
-That's because Gauaaian_smoothing's principle. So, if you want your matrix filled with integer,
-you need to multiply it and Rounding.
-
-
-## Install
-```bash
-### enviroment by Conda
-conda create -n EAGS python=3.8.12
-conda activate EAGS
-pip install -r requirements.txt
-```
 
 ## Contact
 Any questions or suggestions on EAGS are welcomed! Please report it on issues, 
