@@ -31,7 +31,7 @@ pip install -r requirements.txt
 ### Running EAGS Script from the Command-line
 
 ```bash
-cd EAGS-main/.
+cd ./EAGS-main/
 
 # EAGS
 python EAGS.py
@@ -48,7 +48,7 @@ python EAGS.py
 EAGS can also be performed directly without some parameter setting as:
 ```bash
 # EAGS
-cd EAGS-main/.
+cd ./EAGS-main/
 
 python EAGS.py
 --input input.h5ad
