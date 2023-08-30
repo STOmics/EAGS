@@ -76,8 +76,8 @@ For more details on the input anndata(H5AD format), please check on [link](https
 The parameters of  `gaussian_smooth_adaptively` are:
 - `adata`: Adata file (H5AD format) need to be smoothed.
 - `smooth_threshold`: Control the gradient of Gaussian curve.
-- `a`: The a-value of the Gaussian kernel kernel function, which used to control the height of the Gaussian curve.
-- `b`: The b-value of the Gaussian kernel kernel function, which used to control the centre of the Gaussian curve.
+- `a`: The a-value of the Gaussian kernel function, which used to control the height of the Gaussian curve.
+- `b`: The b-value of the Gaussian kernel function, which used to control the centre of the Gaussian curve.
 - `n_comps`: Number of principal components to use for calculating neighborhoods. 
 - `n_neighbors`: Number of nearest neighbors from which to compute kernel bandwidth.
 - `normalize_zscore`: Default preprocessing method for raw counts matrice. If "False", it means input anndata.X data 
