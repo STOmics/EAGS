@@ -162,7 +162,6 @@ def gaussian_smooth_adaptively(adata:anndata.AnnData,smooth_threshold:float=90,a
         sc.pp.filter_genes(adata,min_cells=10)
         max_counts=np.percentile(adata.X.sum(1),98.0)
         sc.pp.filter_cells(adata,max_counts=max_counts)
-        raw_adata=adata.copy().raw.to_adata()
         raw_adata=adata.copy()
         sc.pp.normalize_per_cell(adata,counts_per_cell_after=1e4)
         sc.pp.log1p(adata)
