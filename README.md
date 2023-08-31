@@ -35,14 +35,14 @@ cd ./EAGS-main
 
 # EAGS
 python EAGS.py
---input input.h5ad
+--input data/demo.h5ad
+--output data/demo_EAGS_smoothing.h5ad
 --smooth_threshold 90
 --a 1
 --b 0
 --n_comps 50
 --n_neighbors 10
 --normalize_zscore True
---output gaussian.h5ad
 ```
 
 EAGS can also be performed directly without some parameter setting as:
@@ -51,8 +51,8 @@ EAGS can also be performed directly without some parameter setting as:
 cd ./EAGS-main
 
 python EAGS.py
---input input.h5ad
---output gaussian.h5ad
+--input data/demo.h5ad
+--output data/demo_EAGS_smoothing.h5ad
 ```
 
 ### Parameter Explanation
