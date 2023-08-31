@@ -1,4 +1,4 @@
-anndata
+anndata==0.8.0
 magic-impute==3.0.0
 scanpy==1.9.3
 scipy==1.9.1
