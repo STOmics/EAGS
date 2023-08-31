@@ -155,21 +155,22 @@ def gaussian_smooth_adaptively(adata:anndata.AnnData,smooth_threshold:float=90,a
     
     ### normalize
     if normalize_zscore==True:
-        adata.var['mt']=adata.var_names.str.startswith(('MT-','mt-'))
-        sc.pp.calculate_qc_metrics(adata,qc_vars=['mt'],inplace=True)
-        adata=adata[adata.obs['pct_counts_mt']<10].copy()
-        sc.pp.filter_cells(adata,min_counts=300)
-        sc.pp.filter_genes(adata,min_cells=10)
-        max_counts=np.percentile(adata.X.sum(1),98.0)
-        sc.pp.filter_cells(adata,max_counts=max_counts)
+        # adata.var['mt']=adata.var_names.str.startswith(('MT-','mt-'))
+        # sc.pp.calculate_qc_metrics(adata,qc_vars=['mt'],inplace=True)
+        # adata=adata[adata.obs['pct_counts_mt']<10].copy()
+        # sc.pp.filter_cells(adata,min_counts=300)
+        # sc.pp.filter_genes(adata,min_cells=10)
+        # max_counts=np.percentile(adata.X.sum(1),98.0)
+        # sc.pp.filter_cells(adata,max_counts=max_counts)
         raw_adata=adata.copy()
-        sc.pp.normalize_per_cell(adata,counts_per_cell_after=1e4)
-        sc.pp.log1p(adata)
+        # sc.pp.normalize_per_cell(adata,counts_per_cell_after=1e4)
+        # sc.pp.log1p(adata)
         if type(adata.X)==sp._csr.csr_matrix:
             adata.X = adata.X.toarray()
-        adata.X = (adata.X - adata.X.mean(0)) / adata.X.std(0)
+        # adata.X = (adata.X - adata.X.mean(0)) / adata.X.std(0)
     else:
-        raw_adata=adata.raw.to_adata()
+        raw_adata = adata.copy()
+        # raw_adata=adata.raw.to_adata()
     
     
     ##### pca
