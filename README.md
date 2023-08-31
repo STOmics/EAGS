@@ -60,10 +60,10 @@ python EAGS.py
 The core function of the EAGS method is the `gaussian_smooth_adaptively` function provided in `EAGS.py`, and the 
 detailed formula of this function has been given in the `EAGS_function.py`.
 
-The following code is a quick example of running our Smoothing strategy. The function `gaussian_smooth_adaptively()` takes 
-in `anndata(H5AD format)` 
-object with the cell information(such as gene MID Counts in `anndata.X` , spatial coordinates in `anndata.obsm['Spatial']`). 
-For more details on the input anndata(H5AD format), please check on [link](https://anndata.readthedocs.io/en/latest/).
+The following func is a quick example of running our Smoothing strategy. The function `gaussian_smooth_adaptively()` takes 
+in `anndata (H5AD format)` 
+object with the cell information (such as gene MID Counts in `anndata.X` , spatial coordinates in `anndata.obsm['Spatial']`). 
+For more details on the input anndata (H5AD format), please check on [link](https://anndata.readthedocs.io/en/latest/).
 
     adata_after_smooth = gaussian_smooth_adaptively(adata=adata,
                                                     smooth_threshold=90,
@@ -74,17 +74,17 @@ For more details on the input anndata(H5AD format), please check on [link](https
                                                     normalize_zscore=True)
 
 The parameters of  `gaussian_smooth_adaptively` are:
-- `adata`: Adata file (H5AD format) need to be smoothed.
-- `smooth_threshold`: Control the gradient of Gaussian curve.
+- `adata`: The adata file (H5AD format) that need to be smoothed.
+- `smooth_threshold`: Controling the gradient of Gaussian curve.
 - `a`: The a-value of the Gaussian kernel function, which is used to control the height of the Gaussian curve.
 - `b`: The b-value of the Gaussian kernel function, which is used to control the centre of the Gaussian curve.
-- `n_comps`: Number of principal components to use for calculating neighborhoods. 
-- `n_neighbors`: Number of nearest neighbors from which to compute kernel bandwidth.
-- `normalize_zscore`: Default preprocessing method for raw counts matrice. If "False", it means input anndata.X data 
-have been normalized.
+- `n_comps`: Number of principal components for calculating neighborhoods. 
+- `n_neighbors`: Number of nearest neighbors for computing kernel bandwidth.
+- `normalize_zscore`: Default preprocessing method for raw counts matrix, where "True" means the input anndata.X data that need to be normalized first and "False" means the input anndata.X data 
+that have been normalized.
 
 The output of `gaussian_smooth_adaptively()` is a `anndata(H5AD format)` includes:
-- `adata.X`: MID counts have been smoothed.
+- `adata.X`: MID counts that have been smoothed.
 - `adata.obsm[spatial]`: Spot's spatial coordinates.
 
 
