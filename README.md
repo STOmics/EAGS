@@ -53,6 +53,7 @@ cd ./EAGS-main
 python EAGS.py
 --input data/demo.h5ad
 --output data/demo_EAGS_smoothing.h5ad
+--normalize_zscore False
 ```
 
 ### Parameter Explanation

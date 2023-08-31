@@ -25,7 +25,7 @@ if __name__ == '__main__':
     parser.add_argument('--b', type=float, default=0, help='parameter: b(default 0) in Gaussian weight')
     parser.add_argument('--n_comps', type=int, default=50, help='number of principal components to use for calculating neighborhoods')
     parser.add_argument('--n_neighbors', type=int, default=10, help='number of nearest neighbors from which to compute kernel bandwidth')
-    parser.add_argument('--normalize_zscore', type=bool, default=True, help='default preprocessing method for raw counts matrice')
+    parser.add_argument('--normalize_zscore', type=bool, default=False, help='default preprocessing method for raw counts matrice')
     parser.add_argument('--output', type=str, default='/home/users/gaussian.h5ad', help='output Anndata file name (defaut ./gauss.ha5ad)')
     args = parser.parse_args()
     adata = sc.read_h5ad(args.input)
