@@ -23,7 +23,7 @@ Figure: A. The spatio-temporal omics data processing flow. B. The EAGS method fl
 ### Install Dependencies
 ```bash
 ### Python enviroment constructed by Conda
-conda create -n EAGS python=3.8.13
+conda create -n EAGS python=3.8
 conda activate EAGS
 pip install -r requirements.txt
 ```
