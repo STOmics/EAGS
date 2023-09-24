@@ -90,7 +90,9 @@ The output of `gaussian_smooth_adaptively()` is a `anndata(H5AD format)` include
 - `adata.X`: MID counts that have been smoothed.
 - `adata.obsm[spatial]`: Spot's spatial coordinates.
 
-
+## Tutorial
+The analytical scripts used in this study and the corresponding results, various types of analysis and comparison 
+methods are organized as Notebook (Turtorial/Turtorial_of_EAGS.ipynb).
 ## Contact
 Any questions or suggestions on EAGS are welcomed! Please report it on issues, 
 or contact Tongxuan Lv (lvtongxuan@genomics.cn) or Ying Zhang (zhangying7@genomics.cn).
