@@ -10,9 +10,11 @@ please check the README.md and set parameter by yourself
 """
 
 import warnings
+
+from EAGS.EAGS_function import gaussian_smooth_adaptively
+
 warnings.filterwarnings("ignore")
 import scanpy as sc
-from EAGS_function import gaussian_smooth_adaptively
 import argparse
 
 if __name__ == '__main__':
