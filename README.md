@@ -1,3 +1,14 @@
+[![Downloads](https://static.pepy.tech/badge/EAGS)](https://pepy.tech/project/EAGS)
+![Static Badge](https://img.shields.io/badge/anndata->=0.8-purple)
+![Static Badge](https://img.shields.io/badge/scanpy->=1.9-red)
+![Static Badge](https://img.shields.io/badge/scipy->=1.9-yello)
+![Static Badge](https://img.shields.io/badge/scikit_learn->=0.24-green)
+![Static Badge](https://img.shields.io/badge/pandas->=1.3-orange)
+![Static Badge](https://img.shields.io/badge/pandas->=1.3-white)
+![Static Badge](https://img.shields.io/badge/numpy->=1.23-blue)
+![Static Badge](https://img.shields.io/badge/argparse-8A2BE2)
+
+
 # EAGS: efficient and adaptive Gaussian smoothing applied to high-resolved spatial transcriptomics
 ## Introduction
 EAGS is a smoothing approach for spatial transcriptome data with ultrahigh resolution. 
