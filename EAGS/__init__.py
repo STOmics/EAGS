@@ -1,1 +1,1 @@
-from .EAGS_function import gaussian_smooth_adaptively
+from .EAGS_function import *
