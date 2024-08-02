@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+EAGS/EAGS_function.py
+EAGS/__init__.py
+EAGS.egg-info/PKG-INFO
+EAGS.egg-info/SOURCES.txt
+EAGS.egg-info/dependency_links.txt
+EAGS.egg-info/requires.txt
+EAGS.egg-info/top_level.txt

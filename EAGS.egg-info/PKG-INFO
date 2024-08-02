@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: EAGS
+Version: 1.0.5
+Summary: EAGS: efficient and adaptive Gaussian smoothing applied to high-resolved spatial transcriptomics
+Home-page: https://github.com/STOmics/EAGS.git
+Author: lvtongxuan
+Author-email: lvtongxuan@genomics.cn
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: anndata>=0.8.0
